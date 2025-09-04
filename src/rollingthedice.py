@@ -1,0 +1,5 @@
+s = input()
+cs = s.split("+")
+n, d = (int(i) for i in cs[0].split("d"))
+res = (n + d * n) / 2 + int(cs[1])
+print(res)
