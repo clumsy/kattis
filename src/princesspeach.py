@@ -1,0 +1,5 @@
+n, y = (int(i) for i in input().split())
+s = set(int(input()) for _ in range(y))
+res = (i for i in range(n) if i not in s)
+print(*res, sep="\n")
+print(f"Mario got {len(s)} of the dangerous obstacles.")
