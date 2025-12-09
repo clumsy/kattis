@@ -1,0 +1,22 @@
+s, e = (input().split() for _ in range(2))
+ds = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+i, te = ds.index(s[0]), 0
+dm = 24 * 60
+while s[0] != e[0]:
+    s[0] = ds[(i + 1) % len(ds)]
+    i += 1
+    te += dm
+h, m = (int(c.lstrip("0") or "0") for c in s[1].split(":"))
+ts = h * 60 + m
+h, m = (int(c.lstrip("0") or "0") for c in e[1].split(":"))
+te += h * 60 + m
+m = te - ts
+m = m if m > 0 else m + 7 * dm
+d, m = divmod(m, dm)
+d = f"{d} day" + ("s" if d > 1 else "") if d else ""
+h, m = divmod(m, 60)
+h = f"{h} hour" + ("s" if h > 1 else "") if h else ""
+m = f"{m} minute" + ("s" if m > 1 else "") if m else ""
+res = [c for c in (d, h, m) if c]
+res = (", " if len(res) > 2 else " and ").join(res)
+print(res)
