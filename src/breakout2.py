@@ -1,0 +1,5 @@
+n, x, m = (int(i) for i in input().split())
+cs = (int(input()) for i in range(m))
+s = sum(i < x for i in cs)
+res = min(s, m - s)
+print(res)
