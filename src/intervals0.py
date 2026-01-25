@@ -1,5 +1,5 @@
 n, k = (int(i) for i in input().split())
-h = [0] * 24
+h = [0] * 25
 for _ in range(n):
     b, e = (int(i) for i in input().split())
     h[b] += 1
